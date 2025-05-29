@@ -8,6 +8,7 @@ import 'package:provider_practice/screens/count_example.dart';
 import 'package:provider_practice/screens/example_one.dart';
 import 'package:provider_practice/screens/favourite/dark_theme.dart';
 import 'package:provider_practice/screens/favourite/favourite_screen.dart';
+import 'package:provider_practice/screens/favourite/value_notifier_listner.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,6 +37,9 @@ class MyApp extends StatelessWidget {
               primarySwatch: Colors.blue,
               brightness: Brightness.light,
               appBarTheme: AppBarTheme(backgroundColor: Colors.blue),
+              textTheme: TextTheme(
+                bodyMedium: TextStyle(color: Colors.black),
+              )
             ),
             darkTheme: ThemeData(
               brightness: Brightness.dark,
@@ -46,7 +50,7 @@ class MyApp extends StatelessWidget {
                 style: IconButton.styleFrom(foregroundColor: Colors.red),
               ),
             ),
-            home: const DarkThemeScreen(),
+            home:  NotifyListenerScreen(),
           );
         },
       ),
