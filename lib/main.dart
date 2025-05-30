@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_practice/provider/auth_provider.dart';
 import 'package:provider_practice/provider/count_provider.dart';
 import 'package:provider_practice/provider/example_one_provider.dart';
 import 'package:provider_practice/provider/favourite_provider.dart';
@@ -8,6 +9,7 @@ import 'package:provider_practice/screens/count_example.dart';
 import 'package:provider_practice/screens/example_one.dart';
 import 'package:provider_practice/screens/favourite/dark_theme.dart';
 import 'package:provider_practice/screens/favourite/favourite_screen.dart';
+import 'package:provider_practice/screens/favourite/login.dart';
 import 'package:provider_practice/screens/favourite/value_notifier_listner.dart';
 
 void main() {
@@ -24,6 +26,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
         ChangeNotifierProvider(create: (_) => FavouriteItemProvider()),
         ChangeNotifierProvider(create: (_) => ThemeChangerProvider()),
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
       ],
       child: Builder(
         builder: (BuildContext context) {
@@ -36,7 +39,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               primarySwatch: Colors.blue,
               brightness: Brightness.light,
-              appBarTheme: AppBarTheme(backgroundColor: Colors.blue),
+              appBarTheme: AppBarTheme(backgroundColor: Colors.orange),
               textTheme: TextTheme(
                 bodyMedium: TextStyle(color: Colors.black),
               )
@@ -50,7 +53,7 @@ class MyApp extends StatelessWidget {
                 style: IconButton.styleFrom(foregroundColor: Colors.red),
               ),
             ),
-            home:  NotifyListenerScreen(),
+            home:  LoginScreen(),
           );
         },
       ),
